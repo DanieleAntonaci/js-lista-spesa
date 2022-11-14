@@ -14,6 +14,7 @@ let container = document.getElementById('container');
 
 let i = 0;
 while (i < shoppingList.length) {
+    container.innerHTML += `<li clss="list">${shoppingList[i]}</li>`;
     console.log(shoppingList[i]);
     i++
 };
