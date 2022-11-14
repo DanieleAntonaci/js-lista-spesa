@@ -7,6 +7,8 @@ let shoppingList = [
 ];
 let container = document.getElementById('container');
 let addElement = document.getElementById('add-element');
+let removeElement = document.getElementById('remove-elemnt');
+let inputElement = document.getElementById('list-item');
 
 // for (let i = 0; i < shoppingList.length; i++) {
 //     const element = shoppingList[i];
@@ -15,15 +17,21 @@ let addElement = document.getElementById('add-element');
 
 let i = 0;
 while (i < shoppingList.length) {
-    container.innerHTML += `<li clss="list">${shoppingList[i]}</li>`;
+    container.innerHTML += `<li class="list-${inputElement.value}">${shoppingList[i]}</li>`;
     console.log(shoppingList[i]);
     i++
 };
 
 // button add
 addElement.addEventListener('click', function () {
-    let inputElement = document.getElementById('list-item');
     shoppingList.push = inputElement.value
-    container.innerHTML += `<li clss="list">${inputElement.value}</li>`;
+    container.innerHTML += `<li class="list-${inputElement.value}">${inputElement.value}</li>`;
+});
+
+removeElement.addEventListener('click', function () {
+    shoppingList.pop = inputElement.value;
+    let deleteElemnt = document.querySelector(`.list-${inputElement.value}`)
+    deleteElemnt.remove();
+
 })
 
