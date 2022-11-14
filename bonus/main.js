@@ -5,7 +5,7 @@ let shoppingList = [
     'Carne',
     'Latte'
 ];
-let container = document.getElementById('container');
+let container = document.getElementById('list-container');
 let addElement = document.getElementById('add-element');
 let removeElement = document.getElementById('remove-elemnt');
 let inputElement = document.getElementById('list-item');
@@ -29,9 +29,9 @@ addElement.addEventListener('click', function () {
 });
 
 removeElement.addEventListener('click', function () {
-    shoppingList.pop = inputElement.value;
     let deleteElemnt = document.querySelector(`.list-${inputElement.value}`)
     deleteElemnt.remove();
+    shoppingList.pop = inputElement.value;
 
 })
 
